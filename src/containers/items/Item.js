@@ -1,5 +1,6 @@
 import React from 'react'
 import './Item.css'
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const item = () => {
     return (
@@ -8,9 +9,9 @@ const item = () => {
                 <div className="producto__Container">
                     <div className="producto__Card">
                         <h5>Nombre Producto</h5>
-                        <img src="./assets/products/react-270-1.png" alt="" className="producto__ImgBox-img"/>
+                        <img src="./assets/products/react-270-1.png" alt="foto de zapatilla" className="producto__ImgBox-img"/>
                         <div className="producto__Precio">$150</div>
-                        <button className="procucto__btn">Comprar</button>
+                        <button className="procucto__btn"><AddShoppingCartIcon/></button>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const NavBarComponent = () => {
     return (
+        <React.Fragment>
         <navbar>
             <img src="./assets/img/nike.png" alt="Logo"/>
             <ul>
@@ -15,6 +16,7 @@ const NavBarComponent = () => {
             <div className="navbar__btn"><ShoppingCartIcon/>
             Cart</div>
         </navbar>
+        </React.Fragment>
     )
 }
 
