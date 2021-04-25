@@ -27,3 +27,15 @@ li
 {
     margin: 5px;
 }
+
+.navbar__btn
+{
+    background: #3df0a8;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 14px 0px 14px 0px;
+}

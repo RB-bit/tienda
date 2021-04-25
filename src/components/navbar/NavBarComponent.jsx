@@ -1,5 +1,6 @@
 import React from 'react'
 import './NavBar.css';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 const NavBarComponent = () => {
@@ -11,7 +12,8 @@ const NavBarComponent = () => {
                 <li>Shop</li>
                 <li>Contact</li>
             </ul>
-            <button>Cart</button>
+            <div className="navbar__btn"><ShoppingCartIcon/>
+            Cart</div>
         </navbar>
     )
 }

@@ -1,0 +1,79 @@
+.producto
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 300px;
+  overflow: hidden;
+}
+
+  .producto__Container
+  {
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+  }
+  
+  .producto__Card
+  {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px 5px 14px 5px;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 10px 25px rgba(0,0,0, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+    
+  .producto__Card:hover .producto__ImgBox-img
+  {
+    transform: translateY(-100px) scale(1.2) rotate(-20deg);
+  }
+
+  h5
+  {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .producto__ImgBox-img
+  {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    top: 0;
+    margin: 0 0 60px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .producto__Precio
+  {
+    width: 50px;
+    height: 20px;
+    background-color: rgb(177, 177, 177);
+    border-radius: 50px;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+  }
+
+  button
+  { 
+    position: relative;
+    left: 105px;
+    top: 39px;
+    background-color: #5637DC;
+    border-radius: 14px 0px 14px 0px;
+    color: #fff;
+    padding: 20px;
+    border-style: none;
+
+  }
+  

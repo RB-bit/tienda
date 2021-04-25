@@ -1,18 +1,15 @@
 import React from 'react';
 import './App.css';
 import NavBarComponent from './components/navbar/NavBarComponent'
-import { BrowserRouter, Switch, Route} from 'react-router-dom'
-import itemListContainer from './containers/itemListContainer';
+import Item from './components/items/Item';
 
 function App() {
   return (
     <React.Fragment>
-      <BrowserRouter>
+
         <NavBarComponent />
-        <Route>
-          <itemListContainer />
-        </Route>
-      </BrowserRouter>
+        <Item/>
+
     </React.Fragment>
   );
 }
