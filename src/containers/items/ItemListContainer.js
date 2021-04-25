@@ -1,21 +1,76 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import ItemList from './ItemList'
 
-const itemListContainer = () => {
+const ItemListContainer = () => {
 
-    const task = new Promise((resolve, reject) => {
-        resolve(5)
-    })
+    const [Items, setItems] = useState([])
 
-    task.then((res) => {
-        console.log("res", res)
-    })
+    useEffect(()=>{
+        const productos = [
+            {
+                "precio": 500,
+                "id": 1,
+                "title": "Nike React 270 Black",
+                "pictureUrl": "img/react-270-1.png"
+            },
+            {
+                "precio": 300,
+                "id": 2,
+                "title": "Nike React 270 Bauhaus",
+                "pictureUrl": "img/react-270-2.png"
+            },
+            {
+                "precio": 100,
+                "id": 3,
+                "title": "Nike React 270 Black Agua",
+                "pictureUrl": "img/react-270-3.png"
+            },
+            {
+                "precio": 50,
+                "id": 4,
+                "title": "Nike React 270 White",
+                "pictureUrl": "img/react-270-4.png"
+            },
+            {
+                "precio": 100,
+                "id": 5,
+                "title": "Nike React 270 Reggae",
+                "pictureUrl": "img/react-270-5.png"
+            },
+            {
+                "precio": 150,
+                "id": 6,
+                "title": "Nike React 270 Pnk",
+                "pictureUrl": "img/react-270-6.png"
+            }
+                            ]
+        const task = new Promise((resolve, reject) => {
+            setTimeout(() =>{
+                setItems(productos)
+            },2000)
+            })
+        task.then((res) => {
+                console.log("res", res)
+            }, (rej) =>{
+                console.log("rej", rej)
+            })
+            .catch((err) =>{
+                console.log("Hubo un error", err)
+            })
+            .finally(() =>{
+                console.log("Fin")
+            })               
+    },[])
+
+    console.log(Items)
+
 
     return (
         <div>
-            Hola
+            <ItemList productos={Items}/>
         </div>
     )
 }
 
-export default itemListContainer
+export default ItemListContainer
 
