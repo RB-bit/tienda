@@ -6,6 +6,7 @@
   min-height: 100vh;
   height: 300px;
   overflow: hidden;
+  margin: 50px;
 }
 
 .producto__Container

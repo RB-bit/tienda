@@ -1,16 +1,17 @@
 import React from 'react'
 import Item from './Item'
+import './ItemList.css'
 
 const ItemList = ({productos}) => {
 
 
     return (
         <React.Fragment>
-            <ul>
+            <ul className="productList">
                 {productos.map((dato)=>
-                <div key={dato.id}>
-                    <Item title={dato.title}/>
-                </div>
+                <li key={dato.id} className="productItem">
+                    <Item title={dato.title} precio={dato.precio} pictureUrl={dato.pictureUrl}/>
+                </li>
                 )}
             </ul>
         </React.Fragment>

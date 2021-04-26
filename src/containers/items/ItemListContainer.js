@@ -11,37 +11,37 @@ const ItemListContainer = () => {
                 "precio": 500,
                 "id": 1,
                 "title": "Nike React 270 Black",
-                "pictureUrl": "img/react-270-1.png"
+                "pictureUrl": "./assets/products/react-270-1.png"
             },
             {
                 "precio": 300,
                 "id": 2,
                 "title": "Nike React 270 Bauhaus",
-                "pictureUrl": "img/react-270-2.png"
+                "pictureUrl": "./assets/products/react-270-2.png"
             },
             {
                 "precio": 100,
                 "id": 3,
                 "title": "Nike React 270 Black Agua",
-                "pictureUrl": "img/react-270-3.png"
+                "pictureUrl": "./assets/products/react-270-3.png"
             },
             {
                 "precio": 50,
                 "id": 4,
                 "title": "Nike React 270 White",
-                "pictureUrl": "img/react-270-4.png"
+                "pictureUrl": "./assets/products/react-270-4.png"
             },
             {
                 "precio": 100,
                 "id": 5,
                 "title": "Nike React 270 Reggae",
-                "pictureUrl": "img/react-270-5.png"
+                "pictureUrl": "./assets/products/react-270-5.png"
             },
             {
                 "precio": 150,
                 "id": 6,
                 "title": "Nike React 270 Pnk",
-                "pictureUrl": "img/react-270-6.png"
+                "pictureUrl": "./assets/products/react-270-6.png"
             }
                             ]
         const task = new Promise((resolve, reject) => {
