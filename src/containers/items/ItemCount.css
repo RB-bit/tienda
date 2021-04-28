@@ -1,0 +1,33 @@
+
+
+.producto__Container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.producto__Res
+{
+    height: 35px;
+    width: 35px;
+    margin: 0px 25px 0px 15px;
+    background: #f42391;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+}
+
+.producto__Sum
+{
+    height: 35px;
+    width: 35px;
+    margin: 0px 15px 0px 25px;
+    background: #5637dc;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+}
