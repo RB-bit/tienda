@@ -7,19 +7,23 @@ const ItemCount = ({stock}) => {
     const [stockCliente, setStockCliente] = useState(0);
 
     const suma = () => {
-        setStockCliente(stockCliente + 1);
-        setStockTotal(stockTotal - 1);
+        if(stockTotal > 0){
+            setStockCliente(stockCliente + 1);
+            setStockTotal(stockTotal - 1);
+        }
     }
 
     const resta = () => {
-        setStockCliente(stockCliente - 1);
-        setStockTotal(stockTotal + 1);
-}
+        if(stockCliente > 0){
+            setStockCliente(stockCliente - 1);
+            setStockTotal(stockTotal + 1);
+        }
+    }
 
     return (
         <React.Fragment>
             <div className="producto__Container">
-                <div onClick={resta} className="producto__Res" disabled={stockCliente === 0}>-</div>
+                <div onClick={resta} className="producto__Res">-</div>
                 <div className="producto__Stock">{stockCliente}</div>
                 <div onClick={suma} className="producto__Sum">+</div>
             </div>

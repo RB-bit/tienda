@@ -10,7 +10,7 @@ const ItemList = ({productos}) => {
             <ul className="productList">
                 {productos.map((dato)=>
                 <li key={dato.id} className="productItem">
-                    <Item title={dato.title} precio={dato.precio} pictureUrl={dato.pictureUrl}/>
+                    <Item title={dato.title} precio={dato.precio} pictureUrl={dato.pictureUrl} stock={dato.stock}/>
                 </li>
                 )}
             </ul>

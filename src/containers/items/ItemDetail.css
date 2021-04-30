@@ -1,0 +1,26 @@
+.detailProduct
+{
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.detailProduct__Img
+{
+    height: 570px;
+    width: 65%;
+    z-index: 999;
+}
+
+.detailProduct__Info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #fff;
+    padding: 35px;
+    z-index: 999;
+}
