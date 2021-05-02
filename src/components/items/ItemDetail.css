@@ -4,7 +4,23 @@
     flex-direction: row;
     height: 700px;
     width: 100%;
-    margin-top: 80px;
+    padding-top: 80px;
+    background: #000;
+}
+
+.detailProduct__Icon
+{
+    width: 40px;
+    height: 40px;
+    color: white;
+    margin-left: 40px;
+}
+
+.detailProduct__Icon:hover
+{
+    box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+    -webkit-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+    -moz-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
 }
 
 .detailProduct__Img

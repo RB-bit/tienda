@@ -1,15 +1,18 @@
 import React, {useState, useEffect} from 'react'
-import ItemList from './ItemList'
-import DataBase from '../../DataBase/DataBase.json'
+import ItemDetail from '../components/items/ItemDetail'
+import DataBase from '../DataBase/DataBase.json'
 
-const ItemListContainer = () => {
+
+
+
+const ItemDetailContainer = () => {
 
     const [Items, setItems] = useState([])
 
     useEffect(()=>{
         const productos = DataBase
         
-        const task = new Promise((resolve, reject) => {
+        const task = new Promise(() => {
             setTimeout(() =>{
                 setItems(productos)
             },2000)
@@ -27,12 +30,10 @@ const ItemListContainer = () => {
             })               
     },[])
 
+
     return (
-        <div>
-            <ItemList productos={Items}/>
-        </div>
-    )
+            <ItemDetail productos={Items} />
+            )
 }
 
-export default ItemListContainer
-
+export default ItemDetailContainer

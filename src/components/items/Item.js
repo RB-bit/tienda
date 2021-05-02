@@ -2,6 +2,7 @@ import React from 'react'
 import './Item.css'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 
 const item = ({title, precio, pictureUrl,stock}) => {
 
@@ -14,8 +15,9 @@ const item = ({title, precio, pictureUrl,stock}) => {
                         <h5>{title}</h5>
                         <img src={pictureUrl} alt="foto de zapatilla" className="producto__ImgBox-img"/>
                         <div className="producto__Precio">${precio}</div>
-                            <ItemCount stock={stock}/>
-                        <button className="procucto__btn"><AddShoppingCartIcon/></button>
+                        <ItemCount className="producto__Stock" stock={stock}/>
+                        <Link className="producto__ItemDetail" to={`/ItemDetailContainer`}>Ver</Link>
+                        <Link to={`/ItemDetailContainer`} className="procucto__btn"><button><AddShoppingCartIcon/></button></Link>
                     </div>
                 </div>
             </div>

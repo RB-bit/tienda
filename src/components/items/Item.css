@@ -64,16 +64,43 @@ h5
   font-weight: bolder;
 }
 
+.producto__Stock
+{
+  color: #fff;
+  font-weight: bolder;
+}
+
+.producto__ItemDetail
+{
+  color: #fff;
+  margin-top: 10px;
+  font-style: none;
+}
+
+.producto__ItemDetail:hover
+{
+  box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+  -webkit-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+  -moz-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+}
+
 button
 { 
   position: relative;
   display: flex;
   align-items: center;
   left: 118px;
-  top: 33px;
-  background-color: #5637DC;
+  top: 18px;
+  background: rgb(151,131,238);
+  background: linear-gradient(47deg, rgba(151,131,238,1) 20%, rgba(105,74,238,1) 58%);
   border-radius: 14px 0px 14px 0px;
   color: #fff;
   padding: 20px;
   border-style: none;
 }
+
+.procucto__btn
+{
+  color: #fff;
+}
+

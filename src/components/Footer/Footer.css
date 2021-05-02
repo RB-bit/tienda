@@ -1,0 +1,23 @@
+
+.footer
+{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.footer__Nav
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__RRSS
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
