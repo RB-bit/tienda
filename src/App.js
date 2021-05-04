@@ -17,9 +17,7 @@ function App() {
           <ItemListContainer />
           </Route>
 
-          <Route exact path='/ItemDetailContainer/:id'>
-          <ItemDetailContainer />
-          </Route>
+          <Route path="/ItemDetailContainer/:id" exact component={ItemDetailContainer} />
           
         </Switch>
       <Footer />

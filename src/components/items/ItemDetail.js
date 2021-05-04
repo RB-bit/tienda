@@ -4,13 +4,14 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Link } from 'react-router-dom';
 
 
-const ItemDetail = ({data}) => {
+const ItemDetail = ({data, folder}) => {
+
 
     return ( 
         <React.Fragment>
                             <div key={data.id} className="detailProduct">
                             <Link to={ '/' }><ArrowBackIosIcon className="detailProduct__Icon"/></Link>
-                            <img className="detailProduct__Img" src={data.pictureUrl} alt="Nike React"/>
+                            <img className="detailProduct__Img" src={folder+data.pictureUrl} alt="Nike React"/>
                             <div className="detailProduct__Info">
                                 <h4>Men's Shoes</h4>
                                 <h1>{data.title}</h1>

@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom'
 
 const item = ({id, title, precio, pictureUrl,stock}) => {
 
-
     return (
-        <React.Fragment>
             <div className="producto">
                 <div className="producto__Container">
                     <div className="producto__Card">
@@ -21,7 +19,6 @@ const item = ({id, title, precio, pictureUrl,stock}) => {
                     </div>
                 </div>
             </div>
-        </React.Fragment>
     )
 }
 
