@@ -4,7 +4,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
 
-const item = ({title, precio, pictureUrl,stock}) => {
+const item = ({id, title, precio, pictureUrl,stock}) => {
 
 
     return (
@@ -17,7 +17,7 @@ const item = ({title, precio, pictureUrl,stock}) => {
                         <div className="producto__Precio">${precio}</div>
                         <ItemCount className="producto__Stock" stock={stock}/>
                         <Link className="producto__ItemDetail" to={`/ItemDetailContainer`}>Ver</Link>
-                        <Link to={`/ItemDetailContainer`} className="procucto__btn"><button><AddShoppingCartIcon/></button></Link>
+                        <Link to={`/ItemDetailContainer/${id}`} className="procucto__btn"><button><AddShoppingCartIcon/></button></Link>
                     </div>
                 </div>
             </div>
