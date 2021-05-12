@@ -6,7 +6,6 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 
 const Footer = () => {
     return (
-        <React.Fragment>
             <div className="footer">
 
                     <ul className="footer__Nav">
@@ -21,7 +20,6 @@ const Footer = () => {
                         <li><TwitterIcon/></li>
                     </ul>
             </div>
-        </React.Fragment>
     )
 }
 

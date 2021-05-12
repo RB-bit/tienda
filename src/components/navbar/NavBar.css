@@ -28,9 +28,17 @@ ul
     flex-direction: row;
 }
 
-li
+.navbar__Link
 {
     margin: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar__Link:hover
+{   
+    color: rgba(105,74,238,1);
 }
 
 .navbar__btn

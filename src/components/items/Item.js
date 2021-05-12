@@ -14,8 +14,8 @@ const item = ({id, title, precio, pictureUrl,stock}) => {
                         <img src={pictureUrl} alt="foto de zapatilla" className="producto__ImgBox-img"/>
                         <div className="producto__Precio">${precio}</div>
                         <ItemCount className="producto__Stock" stock={stock}/>
-                        <Link className="producto__ItemDetail" to={`/ItemDetailContainer`}>Ver</Link>
-                        <Link to={`/ItemDetailContainer/${id}`} className="procucto__btn"><button><AddShoppingCartIcon/></button></Link>
+                        <Link className="producto__ItemDetail" to={`/NikeReact270/${id}`}><span>Ver</span></Link>
+                        <Link to={`/NikeReact270/${id}`} className="procucto__btn"><button><AddShoppingCartIcon/></button></Link>
                     </div>
                 </div>
             </div>
