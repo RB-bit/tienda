@@ -2,25 +2,24 @@
 {
     display: flex;
     flex-direction: row;
-    height: 700px;
+    height: 570px;
     width: 100%;
-    padding-top: 80px;
-    background: #000;
+    padding-top: 30px;
+    background: rgb(194, 194, 194);
 }
 
 .detailProduct__Icon
 {
     width: 40px;
     height: 40px;
-    color: white;
+    color: #fff;
     margin-left: 40px;
+    padding-top: 60px;
 }
 
 .detailProduct__Icon:hover
 {
-    box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
-    -webkit-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
-    -moz-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+    color: rgba(105,74,238,0.56);
 }
 
 .detailProduct__Img

@@ -11,7 +11,7 @@
     backdrop-filter: blur(8px);
     color: #fff;
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     border-radius: 0px 0px 14px 14px;
 }
 
@@ -52,4 +52,5 @@ ul
     align-items: center;
     padding: 5px 10px 5px 10px;
     border-radius: 14px 0px 14px 0px;
+    text-decoration: none;
 }

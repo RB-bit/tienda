@@ -4,6 +4,8 @@ import './ItemList.css'
 
 const ItemList = ({stock}) => {
 
+    
+
     return (
             <ul className="productList">
                 {stock.map((dato)=>

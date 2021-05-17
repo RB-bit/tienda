@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 const NavBarComponent = () => {
     return (
-        <React.Fragment>
         <div className="navbar">
             <Link to='/'><img src="./assets/img/nike.png" alt="Logo"/></Link>
             <ul>
@@ -16,10 +15,8 @@ const NavBarComponent = () => {
                 <Link to='/category/urban' className="navbar__Link"><li>Sport</li></Link>
                 <li className="navbar__Link">Contact</li>
             </ul>
-            <div className="navbar__btn"><ShoppingCartIcon/>
-            Cart</div>
+            <Link to='/carrito' className="navbar__btn"><ShoppingCartIcon/>Cart</Link>
         </div>
-        </React.Fragment>
     )
 }
 

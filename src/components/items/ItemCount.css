@@ -1,14 +1,17 @@
 
 
-.producto__Container
+.counter__Container
 {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
+    padding: 10px 70px 10px 0px;
+    background: rgb(194, 194, 194);
+    border-top: 1px solid rgb(194, 194, 194);
 }
 
-.producto__Res
+.counter__Res
 {
     height: 35px;
     width: 35px;
@@ -20,7 +23,12 @@
     color: #fff;
 }
 
-.producto__Sum
+.counter__Stock
+{
+    color: #fff;
+}
+
+.counter__Sum
 {
     height: 35px;
     width: 35px;
@@ -30,4 +38,13 @@
     font-size: 1.6rem;
     text-align: center;
     color: #fff;
+}
+
+.counter__Add 
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 30px;
+
 }

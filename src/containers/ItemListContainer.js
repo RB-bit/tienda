@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ItemList from '../components/items/ItemList'
 import DataBase from '../DataBase/DataBase.json'
+import Loader from '../components/Loader/Loader'
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
@@ -35,11 +36,10 @@ const ItemListContainer = () => {
         });
     },[categoryId])
 
-
     return (
-        <div>
-            <ItemList stock={Items}/>
-        </div>
+        <React.Fragment>
+        { Items.length > 0 ? <ItemList stock={Items}/> : <Loader/>}
+        </React.Fragment>
     )
 }
 

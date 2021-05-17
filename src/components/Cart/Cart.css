@@ -1,0 +1,22 @@
+.Cart
+{
+    height: 500px;
+    background-color: #EEE;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cart__Item
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Cart__Btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

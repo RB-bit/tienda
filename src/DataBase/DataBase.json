@@ -26,8 +26,8 @@
     {
         "id": "4",
         "precio": 50,
-
-"category": "sport",        "title": "Nike React 270 White",
+        "category": "sport",
+        "title": "Nike React 270 White",
         "pictureUrl": "/assets/products/react-270-4.png",
         "stock": 9
     },
