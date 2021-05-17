@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from '../components/items/ItemDetail'
 import ItemCountContainer from './ItemCountContainer'
 import DataBase from '../DataBase/DataBase.json'
@@ -8,24 +8,24 @@ import { CartContext } from '../context/cartContext'
 
 const ItemDetailContainer = () => {
 
-    const [Items, setItems] = useState({})
-    const {id} = useParams()
+    const [item, setItem] = useState({})
+    const { id } = useParams()
 
-    const  {addItem} = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
-    useEffect(()=>{
+    useEffect(() => {
         const productos = DataBase
 
-        const getItems= new Promise((resolve, reject) => {
-            setTimeout(() =>{
+        const getItems = new Promise((resolve, reject) => {
+            setTimeout(() => {
                 resolve(productos)
-            },2000)
-            });
+            }, 2000)
+        });
 
-            getItems
+        getItems
             .then(
                 (res) => {
-                    setItems(res.filter(e=>e.id===id));
+                    setItem(res.filter(e => e.id === id));
                 },
                 (rej) => {
                     console.log("rechazada-->", rej);
@@ -36,19 +36,19 @@ const ItemDetailContainer = () => {
             })
             .finally(() => {
                 console.log("fin de la promesa");
-            });            
-    },[id])
+            });
+    }, [id])
 
-    const onAdd = (count) =>{
-        addItem(count, Items[0]) 
+    const onAdd = (count) => {
+        addItem(item[0], count)
     }
 
     return (
-            <React.Fragment>
-                {Items.length > 0 ? <ItemDetail data={Items[0]} /> : <Loader />}
-                {Items.length > 0 ? <ItemCountContainer data={Items[0]} onAdd={onAdd}/> : <h1>En espera</h1> }
-            </React.Fragment>
-            )
+        <React.Fragment>
+            {item.length > 0 ? <ItemDetail data={item[0]} /> : <Loader />}
+            {item.length > 0 ? <ItemCountContainer data={item[0]} onAdd={onAdd} /> : <h1>En espera</h1>}
+        </React.Fragment>
+    )
 }
 
 export default ItemDetailContainer
