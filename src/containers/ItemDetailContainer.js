@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from '../components/items/ItemDetail'
-import ItemCountContainer from './ItemCountContainer'
-import DataBase from '../DataBase/DataBase.json'
+import dataBase from '../DataBase/DataBase.json'
 import Loader from '../components/Loader/Loader'
 import { useParams } from 'react-router-dom'
 import { CartContext } from '../context/cartContext'
@@ -14,7 +13,7 @@ const ItemDetailContainer = () => {
     const { addItem } = useContext(CartContext)
 
     useEffect(() => {
-        const productos = DataBase
+        const productos = dataBase
 
         const getItems = new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -45,8 +44,7 @@ const ItemDetailContainer = () => {
 
     return (
         <React.Fragment>
-            {item.length > 0 ? <ItemDetail data={item[0]} /> : <Loader />}
-            {item.length > 0 ? <ItemCountContainer data={item[0]} onAdd={onAdd} /> : <h1>En espera</h1>}
+            {item.length > 0 ? <ItemDetail data={item[0]} onAdd={onAdd} /> : <Loader />}
         </React.Fragment>
     )
 }

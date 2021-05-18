@@ -1,18 +1,12 @@
-
-
-.counter__Container
-{
+.counter__Container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px 70px 10px 0px;
-    background: rgb(194, 194, 194);
-    border-top: 1px solid rgb(194, 194, 194);
+    padding: 10px 10px 10px 0px;
 }
 
-.counter__Res
-{
+.counter__Res {
     height: 35px;
     width: 35px;
     margin: 0px 25px 0px 15px;
@@ -23,13 +17,11 @@
     color: #fff;
 }
 
-.counter__Stock
-{
+.counter__Stock {
     color: #fff;
 }
 
-.counter__Sum
-{
+.counter__Sum {
     height: 35px;
     width: 35px;
     margin: 0px 15px 0px 25px;
@@ -40,11 +32,9 @@
     color: #fff;
 }
 
-.counter__Add 
-{
+.counter__Add {
     position: relative;
     top: 0;
     left: 0;
     margin-left: 30px;
-
 }

@@ -6,31 +6,31 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { CartContext } from '../../context/cartContext'
 
 
-const Cart = ({stock}) => {
+const Cart = ({ stock }) => {
 
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, clearItems } = useContext(CartContext)
     console.log(cartItems)
 
     return (
-        <div className="Cart">
-                <Link to={ '/' }><ArrowBackIosIcon className="detailProduct__Icon"/></Link>
-                <h1 className="Cart__Title">Tus próximas zapas Nike</h1>
-                {cartItems.map(x=>
+        <div className="cart">
+            <Link to={'/'}><ArrowBackIosIcon className="detailProduct__Icon" /></Link>
+            <h1 className="cart__Title">Tus próximas zapas Nike</h1>
+
+            {cartItems.map(x =>
                 <div key={x.id}>
-                <ul className="Cart__Item" key={x.id}>
-                    {/* <li><img src={items.pictureUrl}/></li> */}
-                    <li>{x.title}</li>
-                        <li><ItemCount stock={stock} show={false}/> </li>
-                    <li>Precio: ${x.precio}</li>
-                </ul>
+                    <ul className="cart__Item" key={x.id}>
+                        <li><img src={x.pictureUrl} alt={"imagen de zapatilla a comprar"} /></li>
+                        <li>{x.title}</li>
+                        <li><ItemCount stock={stock} show={false} /> </li>
+                        <li> Precio: ${x.precio}</li>
+                    </ul>
                 </div>
-                )}
+            )}
 
-
-                <div className="Cart__Btn">
-                <button className="Cart__Btn-borrar">Borrar todo</button>
-                <button className="Cart__Btn-comprar" >Comprar</button>
-                </div>
+            <div className="cart__Btn">
+                <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>
+                <button className="cart__Btn-comprar" >Comprar</button>
+            </div>
 
         </div>
     )

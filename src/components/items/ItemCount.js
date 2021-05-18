@@ -11,7 +11,6 @@ const ItemCount = ({ id, stockCliente, onAdd, suma, resta, show = true }) => {
             <div onClick={resta} className="counter__Res"> - </div>
             <div className="counter__Stock">{stockCliente}</div>
             <div onClick={suma} className="counter__Sum"> + </div>
-            {/* <Link to='/carrito'><button>Shop Now</button></Link> */}
             {show &&
                 <button className="counter__Add" onClick={() => onAdd(stockCliente)}>Shop Now</button>
             }
