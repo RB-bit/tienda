@@ -39,9 +39,9 @@ export const CartProvider = ({ children }) => {
         }
     }
 
+
     // Remove item in cart
     const removeItems = (item) => {
-        console.log(item)
         const newItem = cartItems.filter(x => x.id !== item)
         setCartItems(newItem)
         console.log('Item eliminado')
@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
     // Clear all items in cart
     const clearItems = () => setCartItems([])
 
-    // Get Units to show in CartWidget
+    // Get Units to show in Cart
     const getUnits = () => {
         const units = cartItems.reduce((a, b) => (a + b.qty), 0)
         //  if (units === 0) {
@@ -59,9 +59,15 @@ export const CartProvider = ({ children }) => {
         return units;
     }
 
+    // Total price
+    function total() {
+        const totalPrice = cartItems.reduce((a, b) => (a + (b.precio * b.qty)), 0)
+        return totalPrice
+    };
+
 
     return (
-        <CartContext.Provider value={{ cartItems, addItem, emptyCart, removeItems, clearItems, getUnits }}>
+        <CartContext.Provider value={{ cartItems, addItem, emptyCart, removeItems, clearItems, getUnits, total }}>
             {children}
         </CartContext.Provider>
     )

@@ -1,0 +1,12 @@
+.cartWidget__btn {
+    background: rgb(151, 131, 238);
+    background: linear-gradient(47deg, rgba(151, 131, 238, 1) 20%, rgba(105, 74, 238, 1) 58%);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 14px 0px 14px 0px;
+    text-decoration: none;
+}

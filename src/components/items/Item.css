@@ -1,20 +1,17 @@
-.producto
-{
+.producto {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 80px;
 }
 
-.producto__Container
-{
+.producto__Container {
   position: relative;
   z-index: 10;
   flex-wrap: wrap;
 }
 
-.producto__Card
-{
+.producto__Card {
   position: relative;
   width: 300px;
   height: 450px;
@@ -23,26 +20,23 @@
   justify-content: center;
   align-items: center;
   border-radius: 14px 5px 14px 5px;
-  background-color: rgba(255,255,255,0.2);
-  box-shadow: 40px 20px 45px rgba(0,0,0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 40px 20px 45px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
-.producto__Card:hover .producto__ImgBox-img
-{
+.producto__Card:hover .producto__ImgBox-img {
   transform: translateY(-100px) scale(1.2) rotate(-20deg);
 }
 
-h5
-{
+h5 {
   font-size: 1.1rem;
   margin: 0;
   color: #fff;
 }
 
-.producto__ImgBox-img
-{
+.producto__ImgBox-img {
   width: 200px;
   height: 150px;
   position: relative;
@@ -51,8 +45,7 @@ h5
   transition: 0.5s ease-in-out;
 }
 
-.producto__Precio
-{
+.producto__Precio {
   width: 50px;
   height: 20px;
   background-color: rgb(218, 218, 218);
@@ -64,14 +57,12 @@ h5
   font-weight: bolder;
 }
 
-.producto__Stock
-{
+.producto__Stock {
   color: #fff;
   font-weight: bolder;
 }
 
-.producto__ItemDetail
-{
+.producto__ItemDetail {
   color: #fff;
   margin-top: 10px;
   border: 1px solid #fff;
@@ -80,30 +71,27 @@ h5
   text-decoration: none;
 }
 
-.producto__ItemDetail:hover
-{
-  box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
-  -webkit-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
-  -moz-box-shadow: 5px 6px 92px 27px rgba(105,74,238,0.56);
+.producto__ItemDetail:hover {
+  box-shadow: 5px 6px 92px 27px rgba(105, 74, 238, 0.56);
+  -webkit-box-shadow: 5px 6px 92px 27px rgba(105, 74, 238, 0.56);
+  -moz-box-shadow: 5px 6px 92px 27px rgba(105, 74, 238, 0.56);
 }
 
-button
-{ 
+button {
   position: relative;
   display: flex;
   align-items: center;
   left: 118px;
   top: 35px;
-  background: rgb(151,131,238);
-  background: linear-gradient(47deg, rgba(151,131,238,1) 20%, rgba(105,74,238,1) 58%);
+  background: rgb(151, 131, 238);
+  background: linear-gradient(47deg, rgba(151, 131, 238, 1) 20%, rgba(105, 74, 238, 1) 58%);
   border-radius: 14px 0px 14px 0px;
   color: #fff;
   padding: 20px;
   border-style: none;
 }
 
-.procucto__btn
-{
+.procucto__btn {
+  position: relative;
   color: #fff;
 }
-

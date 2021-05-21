@@ -5,6 +5,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+}
+
+.cart__Icon {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    margin-left: 40px;
+    padding-top: 60px;
+}
+
+.cart__Icon:hover {
+    color: rgba(105, 74, 238);
 }
 
 .cart__Item {
@@ -12,7 +25,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin: 15px;
+    border: 2px solid;
+    border-color: linear-gradient(47deg, rgba(151, 131, 238, 1) 20%, rgba(105, 74, 238, 1) 58%);
+    border-radius: 14px;
 }
 
 .cart__Item li {
@@ -22,7 +38,16 @@
 
 .cart__Item img {
     height: 100px;
-    width: 100px;
+    width: 130px;
+}
+
+.cart__Total {
+    margin: 35px 25px 40px 25px;
+    padding: 10px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgba(105, 74, 238);
+    border-radius: 14px 0px 14px 0px;
 }
 
 .cart__Btn {
@@ -34,9 +59,7 @@
 
 .cart__Btn button {
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    left: 0;
     top: 0;
     background: rgb(151, 131, 238);
     background: linear-gradient(47deg, rgba(151, 131, 238, 1) 20%, rgba(105, 74, 238, 1) 58%);
@@ -45,4 +68,39 @@
     padding: 15px;
     margin-left: 10px;
     border-style: none;
+}
+
+@media (max-width: 768px) {
+
+    .cart {
+        height: 500px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .cart__Item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 15px;
+        padding: 10px 5px 10px 5px;
+    }
+
+    .cart__Item li {
+        margin-top: 5px;
+    }
+
+    .cart__Total {
+        margin: 5px 10px 5px 17px;
+        padding: 10px;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: rgba(105, 74, 238);
+        border-radius: 14px 0px 14px 0px;
+    }
 }

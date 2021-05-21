@@ -1,12 +1,11 @@
-.navbar
-{
+.navbar {
     height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     color: #fff;
@@ -15,42 +14,24 @@
     border-radius: 0px 0px 14px 14px;
 }
 
-img
-{
+img {
     width: 35px;
     height: 30px;
 }
 
-ul
-{
+ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
 }
 
-.navbar__Link
-{
+.navbar__Link {
     margin: 5px;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
 }
 
-.navbar__Link:hover
-{   
-    color: rgba(105,74,238,1);
-}
-
-.navbar__btn
-{
-    background: rgb(151,131,238);
-    background: linear-gradient(47deg, rgba(151,131,238,1) 20%, rgba(105,74,238,1) 58%);
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px 5px 10px;
-    border-radius: 14px 0px 14px 0px;
-    text-decoration: none;
+.navbar__Link:hover {
+    color: rgba(105, 74, 238, 1);
 }
