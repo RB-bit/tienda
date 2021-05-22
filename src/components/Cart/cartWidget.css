@@ -10,3 +10,16 @@
     border-radius: 14px 0px 14px 0px;
     text-decoration: none;
 }
+
+.cartWidget__qty {
+    position: absolute;
+    top: 2px;
+    right: 103px;
+    background: #bc059e;
+    height: 15px;
+    width: 20px;
+    padding-top: 5px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.6rem;
+}

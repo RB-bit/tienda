@@ -8,7 +8,6 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => { }, [cartItems])
 
-    const emptyCart = () => { setCartItems([]) }
     // check if the item is in cart
     const isInCart = id => cartItems.some(x => x.id === id)
 
@@ -33,8 +32,6 @@ export const CartProvider = ({ children }) => {
             addQuant(item, quant)
             // if the item doesn't exist, add item and quant to cart
         } else {
-            console.log(quant)
-            console.log(`item`, item)
             setCartItems([...cartItems, { ...item, qty: quant }])
         }
     }
@@ -65,9 +62,19 @@ export const CartProvider = ({ children }) => {
         return totalPrice
     };
 
+    // Add an item to cart
+    const addItemCart = (item, quant) => {
+        // if the item exists, add quant
+        if (isInCart(item.id)) {
+            addQuant(item, quant)
+            // if the item doesn't exist, add quant to cartWidget
+        } else {
+            setCartItems([...cartItems, { ...item, qty: quant }])
+        }
+    }
 
     return (
-        <CartContext.Provider value={{ cartItems, addItem, emptyCart, removeItems, clearItems, getUnits, total }}>
+        <CartContext.Provider value={{ cartItems, addItem, addItemCart, removeItems, clearItems, getUnits, total }}>
             {children}
         </CartContext.Provider>
     )

@@ -13,18 +13,18 @@ import { CartProvider } from './context/cartContext'
 function App() {
 
   return (
-    <BrowserRouter>
-        <NavBarComponent />
-          <Switch>
     <CartProvider>
-            <Route path="/carrito" exact component={Cart} />
-            <Route path="/category/:categoryId" exact component={ItemListContainer} />
-            <Route path="/NikeReact270/:id" exact component={ItemDetailContainer} />
-            <Route path="/" exact component={ItemListContainer} />
-    </CartProvider>
-          </Switch>
-        <Footer/>
+      <BrowserRouter>
+        <NavBarComponent />
+        <Switch>
+          <Route path="/carrito" exact component={Cart} />
+          <Route path="/category/:categoryId" exact component={ItemListContainer} />
+          <Route path="/NikeReact270/:id" exact component={ItemDetailContainer} />
+          <Route path="/" exact component={ItemListContainer} />
+        </Switch>
+        <Footer />
       </BrowserRouter>
+    </CartProvider>
   );
 }
 
