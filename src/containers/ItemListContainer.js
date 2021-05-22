@@ -1,44 +1,36 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import ItemList from '../components/items/ItemList'
-import DataBase from '../DataBase/DataBase.json'
 import Loader from '../components/Loader/Loader'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
+import { getFirestore } from '../firebase/firebase'
 
 const ItemListContainer = () => {
 
     const [Items, setItems] = useState([])
 
-    const { categoryId } = useParams()
+    // const { categoryId } = useParams()
 
-    useEffect(()=>{
-        const stock = DataBase;
+    useEffect(() => {
+        const db = getFirestore();
 
-        const task = new Promise((resolve, reject) => {
-            setTimeout(() =>{
-                resolve(stock)
-            },2000)
+        const itemCollection = db.collection("shoes")
+        itemCollection.get()
+            .then((querySnapshot) => {
+                querySnapshot.size === 0 ? console.log("No hay items") : console.log(`Hay ${querySnapshot.size} items`)
+                const documentos = querySnapshot.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                });
+                setItems(documentos)
             })
-
-        task
-        .then(
-            (res) => {
-                (categoryId === undefined) ? setItems(res) : setItems(res.filter(e => e.category === categoryId));
-            },
-            (rej) => {
-                console.log("rechazada-->", rej);
-            }
-        )
-        .catch((err) => {
-            console.log(err);
-        })
-        .finally(() => {
-            console.log("fin de la promesa");
-        });
-    },[categoryId])
+            .catch((err) => console.log("ocurrió un error", err))
+    }, [])
 
     return (
         <React.Fragment>
-        { Items.length > 0 ? <ItemList stock={Items}/> : <Loader/>}
+            { Items.length > 0 ? <ItemList stock={Items} /> : <Loader />}
         </React.Fragment>
     )
 }
