@@ -22,10 +22,10 @@ const Cart = ({ stock }) => {
                 ? cartItems.map(x =>
                     <div key={x.id}>
                         <ul className="cart__Item" key={x.id}>
-                            <li><img src={x.pictureUrl} alt={"imagen de zapatilla a comprar"} /></li>
+                            <li><img src={x.image} alt={"imagen de zapatilla a comprar"} /></li>
                             <li>{x.title}</li>
                             <li>Cantidad <strong>{x.qty}</strong></li>
-                            <li> Precio: ${x.precio}</li>
+                            <li> Precio: ${x.price}</li>
                             <li onClick={() => removeItems(x.id)}><DeleteForeverIcon /></li>
                         </ul>
                     </div>)

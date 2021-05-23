@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from '../components/items/ItemDetail'
-import dataBase from '../DataBase/DataBase.json'
 import Loader from '../components/Loader/Loader'
 import { useParams } from 'react-router-dom'
 import { CartContext } from '../context/cartContext'
+import { getFirestore } from '../firebase/firebase'
 
 const ItemDetailContainer = () => {
 
@@ -13,38 +13,27 @@ const ItemDetailContainer = () => {
     const { addItem } = useContext(CartContext)
 
     useEffect(() => {
-        const productos = dataBase
+        const db = getFirestore()
 
-        const getItems = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos)
-            }, 2000)
-        });
-
-        getItems
-            .then(
-                (res) => {
-                    setItem(res.filter(e => e.id === id));
-                },
-                (rej) => {
-                    console.log("rechazada-->", rej);
-                }
-            )
-            .catch((err) => {
-                console.log(err);
-            })
-            .finally(() => {
-                console.log("fin de la promesa");
-            });
+        const itemsCollection = db.collection("shoes")
+        const detailItem = itemsCollection.doc(id)
+        detailItem.get().then((doc) => {
+            if (!doc.exists) {
+                console.log("doesn't exists")
+                return;
+            }
+            console.log('Exist!')
+            setItem({ id: doc.id, ...doc.data() })
+        })
     }, [id])
 
     const onAdd = (count) => {
-        addItem(item[0], count)
+        addItem(item, count)
     }
-
+    console.log(item)
     return (
         <React.Fragment>
-            {item.length > 0 ? <ItemDetail data={item[0]} onAdd={onAdd} /> : <Loader />}
+            <ItemDetail data={item} onAdd={onAdd} />
         </React.Fragment>
     )
 }

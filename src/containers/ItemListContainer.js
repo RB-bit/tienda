@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import ItemList from '../components/items/ItemList'
 import Loader from '../components/Loader/Loader'
-// import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getFirestore } from '../firebase/firebase'
 
 const ItemListContainer = () => {
 
     const [Items, setItems] = useState([])
 
-    // const { categoryId } = useParams()
+    const { id } = useParams()
 
     useEffect(() => {
         const db = getFirestore();
-
         const itemCollection = db.collection("shoes")
+
         itemCollection.get()
             .then((querySnapshot) => {
                 querySnapshot.size === 0 ? console.log("No hay items") : console.log(`Hay ${querySnapshot.size} items`)
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
                 setItems(documentos)
             })
             .catch((err) => console.log("ocurrió un error", err))
-    }, [])
+    }, [id])
 
     return (
         <React.Fragment>

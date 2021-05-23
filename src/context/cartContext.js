@@ -5,6 +5,7 @@ export const CartContext = React.createContext([]);
 export const CartProvider = ({ children }) => {
 
     const [cartItems, setCartItems] = useState([])
+    //const [buyer, setBuyer] = useState([])
 
     useEffect(() => { }, [cartItems])
 
@@ -72,6 +73,15 @@ export const CartProvider = ({ children }) => {
             setCartItems([...cartItems, { ...item, qty: quant }])
         }
     }
+
+    // const buy = (buyer) => {
+    //     console.log(cartItems)
+    //     let buyCollection = [{
+    //         buyer: { name: "Pedro", phone: "123", email: "pepe@pepe.com" },
+    //         items: { cartItems }
+    //     }]
+    //     setBuyer("compra", buyCollection)
+    // }
 
     return (
         <CartContext.Provider value={{ cartItems, addItem, addItemCart, removeItems, clearItems, getUnits, total }}>
