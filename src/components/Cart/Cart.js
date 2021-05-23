@@ -5,8 +5,7 @@ import LocalMallIcon from '@material-ui/icons/LocalMall';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext'
-
-
+import { Table } from 'react-bootstrap'
 
 const Cart = ({ stock }) => {
 
@@ -32,7 +31,35 @@ const Cart = ({ stock }) => {
                 :
                 <div><h6>No hay productos en tu carrito, elegí tus zapas favoritas</h6><Link to={'/'}><ArrowBackIosIcon /> acá <LocalMallIcon /> </Link></div>
             }
-
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td colSpan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </Table>
             <div className="cart__Total"><strong>Total ${total()}</strong></div>
             <div className="cart__Btn">
                 <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>

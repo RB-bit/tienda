@@ -59,9 +59,11 @@ export const CartProvider = ({ children }) => {
 
     // Total price
     function total() {
-        const totalPrice = cartItems.reduce((a, b) => (a + (b.precio * b.qty)), 0)
+        const totalPrice = cartItems.reduce((a, b) => (a + (b.price * b.qty)), 0)
         return totalPrice
     };
+
+    console.log(total())
 
     // Add an item to cart
     const addItemCart = (item, quant) => {
