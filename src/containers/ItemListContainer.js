@@ -8,11 +8,16 @@ const ItemListContainer = () => {
 
     const [Items, setItems] = useState([])
 
-    const { id } = useParams()
+    const { categoryId } = useParams()
 
     useEffect(() => {
         const db = getFirestore();
-        const itemCollection = db.collection("shoes")
+        let itemCollection = '';
+        if (categoryId) {
+            itemCollection = db.collection('shoes').where('categoryId', '==', categoryId)
+        } else {
+            itemCollection = db.collection('shoes')
+        }
 
         itemCollection.get()
             .then((querySnapshot) => {
@@ -26,7 +31,7 @@ const ItemListContainer = () => {
                 setItems(documentos)
             })
             .catch((err) => console.log("ocurrió un error", err))
-    }, [id])
+    }, [categoryId])
 
     return (
         <React.Fragment>

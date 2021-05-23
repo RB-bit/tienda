@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext'
 import { Table } from 'react-bootstrap'
 
-const Cart = ({ stock }) => {
+
+const Cart = () => {
 
     const { cartItems, clearItems, total, removeItems } = useContext(CartContext)
     console.log(cartItems)
@@ -31,7 +32,7 @@ const Cart = ({ stock }) => {
                 :
                 <div><h6>No hay productos en tu carrito, elegí tus zapas favoritas</h6><Link to={'/'}><ArrowBackIosIcon /> acá <LocalMallIcon /> </Link></div>
             }
-            <Table striped bordered hover>
+            <Table>
                 <thead>
                     <tr>
                         <th>#</th>
