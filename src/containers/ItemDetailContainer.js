@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from '../components/items/ItemDetail'
+import Loader from '../components/Loader/Loader'
 import { useParams } from 'react-router-dom'
 import { CartContext } from '../context/cartContext'
 import { getFirestore } from '../firebase/firebase'
@@ -32,7 +33,7 @@ const ItemDetailContainer = () => {
     console.log(item)
     return (
         <React.Fragment>
-            <ItemDetail data={item} onAdd={onAdd} />
+            {ItemDetail.length > 0 ? <ItemDetail data={item} onAdd={onAdd} /> : <Loader />}
         </React.Fragment>
     )
 }
