@@ -6,15 +6,14 @@ import { CartContext } from '../../context/cartContext'
 
 
 const CartWidget = () => {
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, getUnits } = useContext(CartContext)
 
     return (
         <>
             {cartItems.length > 0 ?
                 <div className="cartWidget">
                     <Link to='/carrito' className="cartWidget__btn"><ShoppingCartIcon />Cart</Link>
-                    {cartItems.map(e =>
-                        <div key={e.id} className="cartWidget__qty">{e.qty}</div>)}
+                    <div className="cartWidget__qty">{getUnits()}</div>
                 </div>
                 :
                 <Link to='/carrito' className="cartWidget__btn"><ShoppingCartIcon />Cart</Link>

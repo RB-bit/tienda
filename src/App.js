@@ -8,22 +8,25 @@ import Footer from './components/Footer/Footer';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { CartProvider } from './context/cartContext'
+import { UserProvider } from './context/userContext'
 
 
 function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter>
-        <NavBarComponent />
-        <Switch>
-          <Route path="/carrito" exact component={Cart} />
-          <Route path="/category/:categoryId" exact component={ItemListContainer} />
-          <Route path="/NikeReact270/:id" exact component={ItemDetailContainer} />
-          <Route path="/" exact component={ItemListContainer} />
-        </Switch>
-        <Footer />
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <NavBarComponent />
+          <Switch>
+            <Route path="/carrito" exact component={Cart} />
+            <Route path="/category/:categoryId" exact component={ItemListContainer} />
+            <Route path="/NikeReact270/:id" exact component={ItemDetailContainer} />
+            <Route path="/" exact component={ItemListContainer} />
+          </Switch>
+          <Footer />
+        </BrowserRouter>
+      </UserProvider>
     </CartProvider>
   );
 }

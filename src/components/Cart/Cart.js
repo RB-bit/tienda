@@ -5,11 +5,13 @@ import LocalMallIcon from '@material-ui/icons/LocalMall';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext'
+import { UserContext } from '../../context/userContext';
+
 
 const Cart = () => {
 
     const { cartItems, clearItems, total, removeItems } = useContext(CartContext)
-    console.log(cartItems)
+    const { handleCompra, } = useContext(UserContext)
 
     return (
         <div className="cart">
@@ -31,13 +33,13 @@ const Cart = () => {
 
                     )
                     :
-                    <div className="item__EmptyCart"><h6>No hay productos en tu carrito, elegí tus zapas favoritas</h6><Link to={'/'} className="item__EmptyCart-btn" ><LocalMallIcon /><p>Ir al shop</p></Link></div>
+                    <div className="item__EmptyCart"><h6>No hay productos en tu carrito</h6><Link to={'/'} className="item__EmptyCart-btn" ><LocalMallIcon /><p>Ir al shop</p></Link></div>
                 }
             </table>
             <div className="cart__Total"><strong>Total ${total()}</strong></div>
             <div className="cart__Btn">
                 <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>
-                <button className="cart__Btn-comprar" >Comprar</button>
+                <button className="cart__Btn-comprar" onClick={() => handleCompra()}>Comprar</button>
             </div>
         </div >
     )

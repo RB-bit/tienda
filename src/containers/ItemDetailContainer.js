@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
     const onAdd = (count) => {
         addItem(item, count)
     }
-    console.log(item)
+
     return (
         <React.Fragment>
             {ItemDetail.length > 0 ? <ItemDetail data={item} onAdd={onAdd} /> : <Loader />}
