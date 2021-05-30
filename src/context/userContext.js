@@ -1,24 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react'
+import firebase from 'firebase/app'
+import { getFirestore } from '../firebase/firebase'
 import { CartContext } from './cartContext';
+import { CodeSharp } from '@material-ui/icons';
 
 export const UserContext = React.createContext({});
 
 export const UserProvider = ({ children }) => {
-    const { cartItems } = useContext(CartContext);
-    const [total, setTotal] = useState(0);
+    const { cartItems, total } = useContext(CartContext);
     const [user, setUser] = useState({
         name: "Rodrigo Bossi",
         email: "mail@mail.com"
     });
     const [order, setOrder] = useState({});
 
-    useEffect(() => {
-        let tot = 0;
-        if (cartItems.length) {
-            cartItems.forEach((i) => (tot += i.price));
-            setTotal(tot);
-        }
-    }, [cartItems])
+    const db = getFirestore();
+    const orders = db.collection("orders");
+
 
     const handleCompra = () => {
         let order = {
@@ -27,19 +25,40 @@ export const UserProvider = ({ children }) => {
                 email: user.email,
             },
             cartItems,
-            total,
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            total: total(),
         }
         cartItems.length && setOrder(order)
     }
 
     useEffect(() => {
-        order.cartItems && console.log("order", order)
+        if (order.cartItems) {
+            orders.add(order)
+                .then((id) => {
+                    console.log("id", id)
+                })
+                .catch((err) => { console.err("error", err) });
+        }
+        //order.cartItems && console.log("order", order)
     }, [order]);
 
 
+    const upDateOrder = () => {
+        const order = orders.doc(
+            "qZWlpdaQ1eFc26sONMu6"
+        )
+        order.update({
+            status: "enviado",
+            total: 11
+        })
+            .then((res) => {
+                console.log("res", res)
+            })
+            .catch((err) => { console.err("error", err) })
+    }
 
     return (
-        <UserContext.Provider value={{ user, order, handleCompra }}>
+        <UserContext.Provider value={{ user, order, handleCompra, upDateOrder }}>
             {children}
         </UserContext.Provider>
     )
