@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import firebase from 'firebase/app'
 import { getFirestore } from '../firebase/firebase'
 import { CartContext } from './cartContext';
-import { CodeSharp } from '@material-ui/icons';
 
 export const UserContext = React.createContext({});
 
@@ -13,6 +12,7 @@ export const UserProvider = ({ children }) => {
         email: "mail@mail.com"
     });
     const [order, setOrder] = useState({});
+    const [id, setId] = useState("")
 
     const db = getFirestore();
     const orders = db.collection("orders");
@@ -34,9 +34,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         if (order.cartItems) {
             orders.add(order)
-                .then((id) => {
-                    console.log("id", id)
-                })
+                .then((res) => setId(res.id))
                 .catch((err) => { console.err("error", err) });
         }
         //order.cartItems && console.log("order", order)
@@ -58,7 +56,7 @@ export const UserProvider = ({ children }) => {
     }
 
     return (
-        <UserContext.Provider value={{ user, order, handleCompra, upDateOrder }}>
+        <UserContext.Provider value={{ user, order, handleCompra, upDateOrder, id }}>
             {children}
         </UserContext.Provider>
     )
