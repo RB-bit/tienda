@@ -37,11 +37,12 @@ const Cart = () => {
                 }
             </table>
             <div className="cart__Total"><strong>Total ${total()}</strong></div>
-            <div className="cart__Btn">
-                <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>
-                <button className="cart__Btn-comprar" onClick={() => handleCompra()}>Comprar</button>
-            </div>
-            { id.length > 0 ? <h2>{id}</h2> : <div></div>}
+            {id.length > 0 ? "" :
+                <div className="cart__Btn">
+                    <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>
+                    <button className="cart__Btn-comprar" onClick={() => handleCompra()}>Comprar</button>
+                </div>}
+            { id && <h2>Tus Nikes están en camino, esta es tu orden: {id}</h2>}
         </div >
     )
 }
