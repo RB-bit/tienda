@@ -55,8 +55,22 @@ export const UserProvider = ({ children }) => {
             .catch((err) => { console.err("error", err) })
     }
 
+    const batchDb = () => {
+        const order1 = "25VyQWO966eaOtecgKBm"
+        const order2 = "SwSZBOTVSkK7CU0V9Ox5"
+        const batch = db.batch();
+
+        batch.update(orders.doc(order1), { total: 10 })
+        batch.update(orders.doc(order2), { total: 1010 })
+
+        batch.commit()
+            .then((res) => console.log("res batch", res))
+            .catch((err) => console.log("err btach", err))
+            .finally(() => console.log("batch finalizado"))
+    }
+
     return (
-        <UserContext.Provider value={{ user, order, handleCompra, upDateOrder, id }}>
+        <UserContext.Provider value={{ user, order, handleCompra, upDateOrder, id, batchDb }}>
             {children}
         </UserContext.Provider>
     )
