@@ -6,11 +6,14 @@ import { CartContext } from './cartContext';
 export const UserContext = React.createContext({});
 
 export const UserProvider = ({ children }) => {
+
+
     const { cartItems, total } = useContext(CartContext);
     const [user, setUser] = useState({
         name: "Rodrigo Bossi",
         email: "mail@mail.com"
     });
+
     const [order, setOrder] = useState({});
     const [id, setId] = useState("")
 
@@ -21,8 +24,8 @@ export const UserProvider = ({ children }) => {
     const handleCompra = () => {
         let order = {
             buyer: {
-                name: user.name,
-                email: user.email,
+                name: "Rodrigo Bossi",
+                email: "mail@mail.com",
             },
             cartItems,
             date: firebase.firestore.Timestamp.fromDate(new Date()),
