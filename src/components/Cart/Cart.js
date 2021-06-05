@@ -11,7 +11,7 @@ import { UserContext } from '../../context/userContext';
 const Cart = () => {
 
     const { cartItems, clearItems, total, removeItems } = useContext(CartContext)
-    const { handleCompra, id, batchDb } = useContext(UserContext)
+    const { handleCompra, id } = useContext(UserContext)
 
     return (
         <div className="cart">
@@ -43,7 +43,6 @@ const Cart = () => {
                 <div className="cart__Btn">
                     <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>
                     <button className="cart__Btn-comprar" onClick={() => handleCompra()}>Comprar</button>
-                    <button className="cart__Btn-comprar" onClick={batchDb}>batch</button>
                 </div>}
             { id && <h2>Tus Nikes están en camino, esta es tu orden: {id}</h2>}
         </div >

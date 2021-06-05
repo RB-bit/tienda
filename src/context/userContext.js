@@ -43,37 +43,36 @@ export const UserProvider = ({ children }) => {
         //order.cartItems && console.log("order", order)
     }, [order]);
 
+    // const upDateOrder = () => {
+    //     const order = orders.doc(
+    //         "qZWlpdaQ1eFc26sONMu6"
+    //     )
+    //     order.update({
+    //         status: "enviado",
+    //         total: 11
+    //     })
+    //         .then((res) => {
+    //             console.log("res", res)
+    //         })
+    //         .catch((err) => { console.err("error", err) })
+    // }
 
-    const upDateOrder = () => {
-        const order = orders.doc(
-            "qZWlpdaQ1eFc26sONMu6"
-        )
-        order.update({
-            status: "enviado",
-            total: 11
-        })
-            .then((res) => {
-                console.log("res", res)
-            })
-            .catch((err) => { console.err("error", err) })
-    }
+    // const batchDb = () => {
+    //     const order1 = "25VyQWO966eaOtecgKBm"
+    //     const order2 = "SwSZBOTVSkK7CU0V9Ox5"
+    //     const batch = db.batch();
 
-    const batchDb = () => {
-        const order1 = "25VyQWO966eaOtecgKBm"
-        const order2 = "SwSZBOTVSkK7CU0V9Ox5"
-        const batch = db.batch();
+    //     batch.update(orders.doc(order1), { total: 10 })
+    //     batch.update(orders.doc(order2), { total: 1010 })
 
-        batch.update(orders.doc(order1), { total: 10 })
-        batch.update(orders.doc(order2), { total: 1010 })
-
-        batch.commit()
-            .then((res) => console.log("res batch", res))
-            .catch((err) => console.log("err btach", err))
-            .finally(() => console.log("batch finalizado"))
-    }
+    //     batch.commit()
+    //         .then((res) => console.log("res batch", res))
+    //         .catch((err) => console.log("err btach", err))
+    //         .finally(() => console.log("batch finalizado"))
+    // }
 
     return (
-        <UserContext.Provider value={{ user, order, handleCompra, upDateOrder, id, batchDb }}>
+        <UserContext.Provider value={{ user, order, handleCompra, id }}>
             {children}
         </UserContext.Provider>
     )
