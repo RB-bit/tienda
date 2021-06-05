@@ -1,5 +1,4 @@
-.productList
-{
+.productList {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -14,20 +13,24 @@
     background: rgb(194, 194, 194);
 }
 
-.productList::before
-{
-    content:'';
+.productList::before {
+    content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(86,55,220,1)55%, rgba(255,171,49,1));
+    background: linear-gradient(45deg, rgba(86, 55, 220, 1)55%, rgba(255, 171, 49, 1));
     clip-path: circle(55% at 100% -20%);
 }
 
-.productItem
-{
+@media (max-width: 700px) {
+    .productList::before {
+        width: 375px;
+    }
+}
+
+.productItem {
     height: 550px;
     margin: 5px;
 }

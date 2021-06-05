@@ -14,6 +14,22 @@
     border-radius: 0px 0px 14px 14px;
 }
 
+@media (max-width: 700px) {
+    .navbar {
+        width: 95%;
+    }
+
+    .navbar__Link-container {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: 163px;
+        padding: 10px;
+        white-space: nowrap;
+        margin-block-start: 5px;
+        margin-block-end: 5px;
+    }
+}
+
 img {
     width: 35px;
     height: 30px;
@@ -33,5 +49,9 @@ ul {
 }
 
 .navbar__Link:hover {
+    color: rgba(105, 74, 238, 1);
+}
+
+.active {
     color: rgba(105, 74, 238, 1);
 }
