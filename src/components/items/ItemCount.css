@@ -15,6 +15,9 @@
     font-size: 1.6rem;
     text-align: center;
     color: #fff;
+    left: 0;
+    top: 0;
+    padding: 8px 5px 12px 14px;
 }
 
 .counter__Stock {
@@ -30,6 +33,9 @@
     font-size: 1.6rem;
     text-align: center;
     color: #fff;
+    left: 0;
+    top: 0;
+    padding: 8px 5px 10px 10px;
 }
 
 .counter__Add {

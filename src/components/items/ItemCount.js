@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import "./ItemCount.css"
+import { CartContext } from '../../context/cartContext'
+import { Link } from 'react-router-dom'
 
+const ItemCount = ({ id, stockCliente, onAdd, suma, resta }) => {
 
-const ItemCount = ({ id, stock, stockCliente, onAdd, suma, resta }) => {
+    const { isInCart } = useContext(CartContext)
+    const [itemInCart, setItemInCart] = useState(isInCart(id))
 
-    console.log(stock)
+    useEffect(() => {
+        setItemInCart(itemInCart)
+    }, [id, itemInCart])
 
     return (
-
-        <div id={id} className="counter__Container">
-            <div onClick={resta} className="counter__Res"> - </div>
-            <div className="counter__Stock">{stockCliente}</div>
-            <div onClick={suma} className="counter__Sum"> + </div>
-            <button className="counter__Add" onClick={() => onAdd(stockCliente)}>Shop Now</button>
-        </div>
+        <React.Fragment>
+            {
+                itemInCart ? (<Link to='/carrito'><button>Finalizar Compra</button></Link>)
+                    :
+                    (<div id={id} className="counter__Container">
+                        <button onClick={resta} className="counter__Res"> - </button>
+                        <div className="counter__Stock">{stockCliente}</div>
+                        <button onClick={suma} className="counter__Sum"> + </button>
+                        <button className="counter__Add" onClick={() => onAdd(stockCliente)}>Shop Now</button>
+                    </div>)
+            }
+        </React.Fragment>
     )
 }
 
 export default ItemCount
+
+

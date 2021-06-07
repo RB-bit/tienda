@@ -37,10 +37,10 @@ const Footer = () => {
             </div>
 
 
-            <div className="footer-copyright">
-                <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+            <p className="footer-copyright">Copyright &copy; 2021 All Rights Reserved by
                     <a href="https://www.nike.com/ar/" target="blank"> Nike</a></p>
-            </div>
+
+
 
         </React.Fragment>
     )

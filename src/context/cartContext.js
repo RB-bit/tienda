@@ -60,17 +60,8 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    // const buy = (buyer) => {
-    //     console.log(cartItems)
-    //     let buyCollection = [{
-    //         buyer: { name: "Pedro", phone: "123", email: "pepe@pepe.com" },
-    //         items: { cartItems }
-    //     }]
-    //     setBuyer("compra", buyCollection)
-    // }
-
     return (
-        <CartContext.Provider value={{ cartItems, addItem, addItemCart, removeItems, clearItems, getUnits, total }}>
+        <CartContext.Provider value={{ cartItems, addItem, addItemCart, removeItems, clearItems, getUnits, total, isInCart }}>
             {children}
         </CartContext.Provider>
     )
