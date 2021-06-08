@@ -15,7 +15,7 @@ const ItemCount = ({ id, stockCliente, onAdd, suma, resta }) => {
     return (
         <React.Fragment>
             {
-                itemInCart ? (<Link to='/carrito'><button>Finalizar Compra</button></Link>)
+                itemInCart ? (<Link to='/carrito' className="counter__End-Link"><button className="counter__End">Finalizar Compra</button></Link>)
                     :
                     (<div id={id} className="counter__Container">
                         <button onClick={resta} className="counter__Res"> - </button>

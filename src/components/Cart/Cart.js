@@ -44,7 +44,7 @@ const Cart = () => {
                     <button className="cart__Btn-borrar" onClick={() => clearItems()}>Borrar todo</button>
                     <button className="cart__Btn-comprar" onClick={() => handleCompra()}>Comprar</button>
                 </div>}
-            { id && <h2>Tus Nikes están en camino, esta es tu orden: {id}</h2>}
+            { id && <h2 className="cart__Btn-SeguirComprando">Tus Nikes están en camino, esta es tu orden: {id} <Link to='/'><button onClick={() => clearItems()}>Seguir comprando</button></Link></h2>}
         </div >
     )
 }

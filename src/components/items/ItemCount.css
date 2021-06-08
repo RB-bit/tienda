@@ -44,3 +44,14 @@
     left: 0;
     margin-left: 30px;
 }
+
+.counter__End {
+    top: 0;
+    left: 0;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.counter__End-Link {
+    text-decoration: none;
+}

@@ -15,9 +15,6 @@
 }
 
 @media (max-width: 700px) {
-    .navbar {
-        width: 95%;
-    }
 
     .navbar__Link-container {
         overflow-y: hidden;
