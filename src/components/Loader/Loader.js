@@ -3,9 +3,9 @@ import './Loader.css'
 
 const Loader = () => {
     return (
-        <div className="Loader">
-            <div className="Loader__Size">
-            <div className="progress-9"></div>
+        <div className="loader">
+            <div className="loader__Size">
+                <div className="progress"></div>
             </div>
         </div>
     )

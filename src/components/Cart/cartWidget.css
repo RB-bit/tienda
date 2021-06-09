@@ -12,9 +12,9 @@
 }
 
 .cartWidget__qty {
-    position: absolute;
-    top: 2px;
-    right: 103px;
+    position: relative;
+    bottom: 15px;
+    left: 6px;
     background: rgb(216, 2, 2);
     height: 15px;
     width: 20px;
